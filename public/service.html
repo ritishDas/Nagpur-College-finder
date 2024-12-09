@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Submission Form</title>
+</head>
+<body>
+    <h2>Submit Item Details</h2>
+    <form action="http://localhost:8000/api/service/addservice" method="post" enctype="multipart/form-data">
+        <!-- Name Field -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <!-- Price Field -->
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" required>
+        <br><br>
+
+        <!-- Contact Field -->
+        <label for="contact">Contact:</label>
+        <input type="tel" id="contact" name="contact" required>
+        <br><br>
+
+        <!-- Location Field -->
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+        <br><br>
+
+        <!-- Photos Field -->
+        <label for="photos">Photos:</label>
+        <input type="file" id="photos" name="photos" accept="image/*" multiple>
+        <br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

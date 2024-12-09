@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h2>Enter Your Information</h2>
+    <form action="http://localhost:8000/api/coll" method="post" enctype="multipart/form-data">
+        <!-- Name Field -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <!-- ID Field -->
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" required><br><br>
+
+        <!-- Photos Upload -->
+        <label for="photos">Upload Photos:</label>
+        <input type="file" id="photos" name="photos" accept="image/*" multiple><br><br>
+  <div id="tagsContainer">
+    <label>Tag 1: <input type="text" name="feature[]" /></label><br>
+  </div>
+  <button type="button" onclick="addTagInput()">Add another tag</button><br><br>
+ 
+        <!-- Website Field -->
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website" placeholder="https://example.com"><br><br>
+
+        <!-- Location Field -->
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location"><br><br>
+
+        <!-- Link Field -->
+        <label for="llink">Link:</label>
+        <input type="url" id="llink" name="llink" placeholder="https://example.com"><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+<script>
+  let tagCount = 1; // Initial tag count
+
+  function addTagInput() {
+    tagCount++;
+    const tagsContainer = document.getElementById('tagsContainer');
+    
+    // Create a new label and input field for the next tag
+    
+
+    const newTagInput = document.createElement('input');
+    newTagInput.type = 'text';
+    newTagInput.name = 'feature[]';
+
+    // Add a line break after each input field
+    const lineBreak = document.createElement('br');
+
+    // Append the new elements to the tags container
+    tagsContainer.appendChild(newTagInput);
+    tagsContainer.appendChild(lineBreak);
+  }
+</script>
+
+
+
+</body>
+</html><!--
+<form action="/submit" method="POST" id="tagsForm">
+ <button type="submit">Submit</button>
+</form>
+
+-->
