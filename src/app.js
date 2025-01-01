@@ -14,7 +14,7 @@ const app=express();
 
 app.use(cookie_parser());
 app.use(cors({
-    origin:'*',
+    origin:'https://ritishdas.github.io/ncs_frontend',
     credentials: true}
 ));
 app.use(express.json());
