@@ -2,7 +2,6 @@ const jwt = require("jsonwebtoken");
 
 
 const authCheck = (req,res,next) => {
-        console.log("user Arrived");
     try{
         const token = req.cookies?.token;
         if(!token) return res.status(401).json({message:"Please Login First"});

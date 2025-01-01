@@ -19,17 +19,12 @@ app.use(cors({
 ));
 app.use(express.json());
 app.use(express.urlencoded());
-//app.use("/i*",express.static(path.join(__dirname,"../public")));
 
 
 app.use("/api/college",collegeRoute);
 app.use("/api/user",userRoute);
 app.use("/api/service",serviceRoute);
 app.use("/api/comment",commentRoute);
-
-app.get("/i*",(req,res)=>{
-    res.sendFile(path.join(__dirname,"../public/index.html"))
-});
 
 
 
