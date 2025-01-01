@@ -14,7 +14,7 @@ const userLogin = async (req, res, next) => {
 
         const token = user.generateToken();
 console.log("user logged in");
-        res.cookie("token", token, { httpOnly: true,secure:true }).json({ message: "User logged in" });
+        res.cookie("token", token, { httpOnly: true,secure:true,sameSite:'None' }).json({ message: "User logged in" });
     } catch (err) {
         next(err);   
     }
