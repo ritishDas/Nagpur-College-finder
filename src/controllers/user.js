@@ -24,11 +24,15 @@ const loginCheck=(req,res,next)=>{
     try{
         const token=req.cookies?.token;
         if(!token){
-            return res.json({login:false});
+            return res.json({login:false,
+"message":"no token found"
+});
         }
         const tokencheck = jwt.verify(token,process.env.TOKEN_SECRET);
         if(tokencheck) return res.json({login:true});
-        else return  res.json({login:false});
+        else return  res.json({login:false,
+message:"wrong token"
+});
 
     }
     catch(err){
