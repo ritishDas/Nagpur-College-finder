@@ -71,26 +71,27 @@ next(err);
     }
 }
 const saveService = async(req,res,next)=>{
- try {
-        const id = req.params.id;
-        const service = await Service.findOne({ id }).select({ _id: 1 });
+	try {
+		const id = req.params.id;
+		const service = await Service.findOne({ id }).select({ _id: 1 });
 
-        if (!service) {
-            return res.status(404).json({ message: "Service not found" });
-        }
+		if (!service) {
+			return res.status(404).json({ message: "Service not found" });
+		}
 
-        const user = await User.findById(req.user);
-        if (!user) {
-            return res.status(404).json({ message: "User not found" });
-        }
-
-        user.favser.push(service._id);
-        await user.save();
-
-        res.json({ message: "Service added to favorites" });
-    } catch (err) {
-        next(err);
-    }
+		const user = await User.findById(req.user);
+		if (!user) {
+			return res.status(404).json({ message: "User not found" });
+		}
+		if(!user.favser.includes(service._id)){
+			user.favser.push(service._id);
+			await user.save();
+		}
+			res.json({ message: "Service added to favorites" });
+		}
+	catch (err) {
+		next(err);
+	}
 
 }
 

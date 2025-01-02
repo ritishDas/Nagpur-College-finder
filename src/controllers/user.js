@@ -57,7 +57,6 @@ const fetchUser=async(req,res,next)=>{
 const registerUser = async(req,res,next)=>{
     try{
         const {email,name,password} = req.body;
-console.log(req.body);
         const hashedPass = await bcrypt.hash(password,10);
         await User.create({email,name,password:hashedPass});
         res.json({"success":true,message:"user created successfully"});
