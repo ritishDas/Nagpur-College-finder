@@ -1,0 +1,2 @@
+req.parameters.person.name(string)
+req.parameters.year(array)
