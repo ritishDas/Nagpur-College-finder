@@ -14,8 +14,9 @@ router.route('/remove/:id').put(authCheck,removeCollege);
 
 router.route('/dialogflow').post((req,res,next)=>{
   const data = req.body;
-res.json({person:data.parameters.person.name,
-  data.parameters.year[0]});
+res.status(200).json({
+  person:data.parameters.person.name,
+year:data.parameters.year[0]});
 });
 module.exports=router;
   
