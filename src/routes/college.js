@@ -13,7 +13,7 @@ router.route('/save/:id').put(authCheck,saveCollege);
 router.route('/remove/:id').put(authCheck,removeCollege);
 
 router.route('/dialogflow').post((req,res,next)=>{
-  const data = req.body;
+  const data = req.body.queryResult;
 res.status(200).json({
   person:data.parameters.person.name,
 year:data.parameters.year[0]});
