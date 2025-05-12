@@ -1,4 +1,3 @@
-Here's a clear and professional README for your college review and services website:
 
 ---
 
@@ -68,38 +67,6 @@ npm start
 
 ---
 
-## 🔧 Folder Structure (optional)
 
-```
-college-review-platform/
-├── client/       # React frontend
-└── server/       # Node.js backend
-```
-
----
-
-## 📌 Future Enhancements
-
-* College admin dashboard
-* Email verification for reviewers
-* Map integration for PG locations
-* Real-time chat for service providers
-* Search & filter functionalities
-
----
-
-## 📄 License
-
-MIT License. Feel free to use and modify.
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome. For major changes, open an issue first to discuss what you would like to change.
-
----
-
-Would you like a logo or screenshots section added too?
 
 Frontend : https://github.com/ritishDas/ncs_frontend
